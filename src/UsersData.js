@@ -246,6 +246,14 @@ export const returnUsername = () => {
 export const getPetList = () => get(pets);
 
 export function setUsername(inputUsername) {
+  if (!(usersData.find(user=>user.owner===inputUsername.owner))){
+    const newUser = {
+      owner: inputUsername,
+      accountCreationDate: new Date(),
+      pets:[]
+    };
+    usersData.push(newUser);
+  }
   username.set(inputUsername); // Set the new username in the store
 }
 
