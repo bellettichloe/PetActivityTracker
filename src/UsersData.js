@@ -341,7 +341,7 @@ export function addPet(newPetName, newPetSpecies, newPetDOB, newPetPhoto) {
 
     pets.update(currentPets => [...currentPets, newPet]);
     console.log(newPet)
-    selectedPet.set(null);
+    selectedPet.set(newPet)
     activityData.set({ activityLevel: "", appetite: "", bathroomHabits: "", sleep: "", behaviors: "" });
     newPetName = "";
     newPetSpecies = "";
@@ -349,6 +349,7 @@ export function addPet(newPetName, newPetSpecies, newPetDOB, newPetPhoto) {
     newPetPhoto = null;
     addPetMessage = "New pet added!";
     showAddPetModal = false;
+
   }
 
 }

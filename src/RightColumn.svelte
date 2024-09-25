@@ -50,7 +50,7 @@
         <p><strong>Species:</strong> {$selectedPet.species}</p>
         <p>
           <strong>Days Tracked for {$selectedPet.name}:</strong>
-          {Object.keys($selectedPet.activities).length-1} days
+          {Object.keys($selectedPet.activities).length} days
         </p>
       </div>
     {/if}
