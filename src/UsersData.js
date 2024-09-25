@@ -325,7 +325,7 @@ export function saveActivity() {
     // Hide the message after 3 seconds
     setTimeout(() => {
       showSaveMessage.set(false);
-    }, 3000);
+    }, 5000);
   }
 }
 

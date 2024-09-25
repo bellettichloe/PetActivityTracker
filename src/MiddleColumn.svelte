@@ -5,6 +5,7 @@
   import { currentDate } from "./DateData.js";
   import { savedActivityData } from "./UsersData.js";
   import { get, writable } from "svelte/store";
+  import { calculateDaysTracked } from "./UsersData.js";
 
   let saved = writable({
     activityLevel: "",
@@ -14,15 +15,11 @@
     behaviors: "",
   });
   let showModal = false;
-  function showSaveMessage() {
-    return displaySaveMessage();
-  }
-
+  
   function handleSaveActivity(event) {
     event.preventDefault();
     saveActivity();
-    let saved = get(savedActivityData);
-
+    saved = get(savedActivityData);
     showModal = true;
 
     setTimeout(() => {
